@@ -17,7 +17,6 @@ const Student = mongoose.model('students', {
 // the result parameter will contain a single object (the first matching document found
 // if no matching document was found, result will be null
 let data = await Student.findOne({age: 36});
-console.log(data);
 
 // results here will always be an array, regardless of how many matching documents were found
 // let data = await Student.find({ age: 17 });
@@ -46,8 +45,11 @@ await Student.updateOne(
 
 // updates multiple documents and returns an object containing the result details (NOT the documents)
 await Student.updateMany(
-  { age: 65 },
+  { age: 20 },
   {$set: {age: 17}
 });
+
+await Student.deleteOne({ stdnum: 2006});
+
 
 
