@@ -1,7 +1,4 @@
-
-
 import mongoose from 'mongoose';
-
 
 // connection string
 await mongoose.connect('mongodb+srv://mgautriz:TSkSBUBSwQeOSCWD@cluster0.afdttnk.mongodb.net/ICS', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -29,6 +26,7 @@ const newStudent = new Student({
     age: 20
 });
 
+console.log(data);
 await newStudent.save();
 
 //Updating the database
